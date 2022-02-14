@@ -1,4 +1,4 @@
-# TFG
+# TFG - Mejora de un Sistema de Auto-escalado para Sistemas Distribuidos
 ## Resumen
 Uno de los principales pilares de la computación en la nube es la elasticidad, es decir, la capacidad de ajustar los recursos necesarios de forma automática para cubrir la demanda en cada instante. Los sistemas de auto-escalado son los encargados de dotar de elasticidad a los sistemas escalables. Dichos sistemas de auto-escalado están recibiendo gran atención en los últimos años debido a la expansión de las arquitecturas basadas en micro-servicios (e.g. Kubernetes y Docker) y al auge de la computación en la nube.
 
