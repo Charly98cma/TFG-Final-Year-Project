@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper, english]{article}
+\usepackage[spanish]{babel}
+\usepackage{setspace}
+
+% --- MARGIN DIMENSIONS ---
+\frenchspacing \addtolength{\hoffset}{-1.5cm}
+\addtolength{\textwidth}{3cm} \addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{4cm}
+\setlength{\headheight}{15pt}
+% --- MARGIN DIMENSIONS ---
+
+
+% --- TITLE DATA ---
+\title{
+  % Title of the document
+  \textbf{Mejora de un sistema de auto-escalado para sistemas distribuidos} \\[0.5cm]
+
+  % Name of the subject
+  \textsc{Propuesta de Trabajo de Fin de Grado} \\[0.5cm]
+
+  % Name of the department to which the subject belongs.
+  \emph{ID de la oferta: 5319}\\[1cm]
+}
+
+\author{
+  \textit{\underline{Tutor}}\\[0.2cm]
+
+  \textsc{Rampérez Martín, Victor}\\
+  v.ramperez@fi.upm.es\\[0.2cm]
+
+  % Use this pattern to add more authors:
+  %
+  % \textsc{SURNAME, NAME}\\
+  % Registration Number: XXXXXX\\[0.2cm]
+}
+
+\date{
+  \vfill\vfill\vfill
+  \underline{\today}
+}
+% --- TITLE DATA ---
+
+% --- DOCUMENT ---
+\begin{document}
+
+% --- TITLE ---
+\clearpage\maketitle
+\thispagestyle{empty}
+\pagebreak
+% --- TITLE ---
+\pagenumbering{arabic}
+\section{Resumen General del Trabajo}
+
+Los sistemas de auto-escalado o auto-scalers son elementos primordiales en los entornos cloud ya que son los encargados de dotar de elasticidad a las aplicaciones escalables, y poder así, explotar uno de los principales pilares de la computación en la nube. Además, los auto-scalers están recibiendo gran atención en los últimos años debido a la expansión de las arquitecturas basadas en micro-servicios (e.g. Kubernetes y Docker).\\
+
+En el contexto de este TFG se está desarrollando un auto-scaler para el escalado de servicios cloud mediante la combinación de técnicas de auto-escalado predictivas y reactivas. La parte predictiva de este sistema está compuesta actualmente por modelos estadísticos, que, aunque han permitido una comprensión profunda del funcionamiento del sistema y tienen una buena capacidad predictiva, ahora pueden ser comparados con otros modelos predictivos basados en técnicas más complejas, como modelos de Machine-Learning y Deep-Learning. Además, dichos modelos han de integrarse en un mismo framework para poder ser usado por distintos tipos de sistemas distribuidos. Finalmente, este sistema de auto-escalado solo ha sido probado con cargas de trabajo sintéticas debido a la escasa disponibilidad de cargas de trabajo reales que sean exportables al sistema distribuido con el que se está evaluando.\\
+
+
+Por todo ello, el presente Trabajo Fin de Grado propone la búsqueda y adaptación de una carga de trabajo real que pueda ser utilizada en la evaluación del sistema de auto-escalado, así como la obtención y monitorización de las métricas de rendimiento relevantes. Por otro lado, será necesario integrar los modelos predictivos actuales en un framework que sea agnóstico del sistema distribuido, para poder probar en ellos las mejoras del auto-scaler fruto de este TFG. Finalmente, sería deseable implementar otros modelos predictivos de auto-escalado basados en técnicas de Machine-Learning y Deep-Learning que permitan mejorar las predicciones actuales, así como el diseño e implementación de una evaluación sistemática que así lo demuestre.
+
+\section{Lista de objetivos concretos}
+\begin{enumerate}
+    \item Estudio y análisis del estado del arte
+    \item Búsqueda e integración de una carga de trabajo real para el sistema distribuido objeto de estudio, así como la medición del impacto de esta en las métricas de rendimiento de dicho sistema.
+    \item Integración de los modelos predictivos y reactivos del sistema de auto-escalado en un framework que permita su integración con cualquier tipo de sistema distribuido.
+    \item Diseño e implementación de un conjunto de pruebas que comprueben el correcto funcionamiento del framework de auto-escalado de forma automática.
+    \item Mejora de los modelos predictivos del sistema de auto-escalado.
+    \item Elaboración de una memoria que recoja todo el trabajo realizado.
+    \item Elaboración de una presentación que sintetice y presente de forma clara los aspectos esenciales del trabajo realizado por el alumno.
+\end{enumerate}
+
+\section{Desglose de la dedicación total del trabajo en horas}
+324 horas en los Grados.
+\begin{enumerate}
+    \item Estudio y análisis del estado del arte (29 horas).
+    \item Búsqueda e integración de una carga de trabajo real para el sistema distribuido objeto de estudio, así como la medición del impacto de esta en las métricas de rendimiento de dicho sistema (100 horas).
+    \item Integración de los modelos predictivos y reactivos del sistema de auto-escalado en un framework que permita su integración con cualquier tipo de sistema distribuido (60 horas).
+    \item Diseño e implementación de un conjunto de pruebas que comprueben el correcto funcionamiento del framework de auto-escalado de forma automática (40 horas).
+    \item Mejora de los modelos predictivos del sistema de auto-escalado (50).
+    \item Elaboración de una memoria que recoja todo el trabajo realizado (35 horas).
+    \item Elaboración de una presentación que sintetice y presente de forma clara los aspectos esenciales del trabajo realizado por el alumno (10 horas).
+\end{enumerate}
+
+\section{Conocimientos previos recomendados}
+\begin{itemize}
+    \item[•] Git
+    \item[•] Micro-servicios (Docker, Kubernetes, etc)
+    \item[•] Proyectos open-source
+    \item[•] Java
+\end{itemize}
+
+\end{document}
+% --- DOCUMENT ---

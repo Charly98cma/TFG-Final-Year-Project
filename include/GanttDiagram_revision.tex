@@ -1,0 +1,41 @@
+% \ganttbar{NAME}{START}{END} \\
+% \ganttlink[link type={s-s || s-f || f-s || f-f}]{elem0}{elem1}
+\begin{center}
+    \begin{ganttchart}[
+            hgrid,
+            vgrid,
+            x unit=1cm,
+            y unit chart=0.9cm
+        ]{1}{17}
+        \gantttitle{Semana}{17} \\
+        \gantttitlelist{1,...,17}{1} \\
+        \ganttbar[name=T1]{T1}{1}{2} \\
+        \ganttbar[name=T2]{T2}{3}{3} \\
+        \ganttbar[name=T3]{T3}{4}{5} \\
+        \ganttbar[name=T4]{T4}{6}{6} \\
+        \ganttbar[name=T5]{T5}{6}{7} \\
+        \ganttbar[name=T6]{T6}{7}{7} \\
+        \ganttbar[name=T7]{T7}{8}{10} \\
+        \ganttbar[name=T8]{T8}{11}{12} \\
+        \ganttbar[name=T9]{T9}{13}{14} \\
+        \ganttbar[name=T10]{T10}{14}{14} \\
+        \ganttbar[name=T11]{T11}{15}{15} \\
+        \ganttbar[name=T12]{T12}{16}{16} \\
+        \ganttbar[name=T13]{T13}{16}{17} \\
+        \ganttbar[name=TFG]{Doc. TFG}{2}{16} \\
+        \ganttbar[name=Pres]{Pres. Defensa}{16}{17}
+        % Links between tasks/bars
+        \ganttlink[link type=f-s]{T1}{T2}
+        \ganttlink[link type=f-s]{T2}{T3}
+        \ganttlink[link type=f-s]{T3}{T4}
+        \ganttlink[link type=s-s]{T4}{T5}
+        \ganttlink[link type=f-f]{T5}{T6}
+        \ganttlink[link type=f-s]{T6}{T7}
+        \ganttlink[link type=f-s]{T7}{T8}
+        \ganttlink[link type=f-s]{T8}{T9}
+        \ganttlink[link type=f-f]{T9}{T10}
+        \ganttlink[link type=f-s]{T10}{T11}
+        \ganttlink[link type=f-s]{T11}{T12}
+        \ganttlink[link type=s-s]{T12}{T13}
+    \end{ganttchart}
+\end{center}

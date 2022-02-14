@@ -1,0 +1,551 @@
+\renewcommand{\thesection}{\Alph{section}}
+
+\chapter{Anexo} \label{chp:anexo}
+
+A continuación se muestra el código, las figuras y las métricas de interés procedentes del
+desarrollo de este proyecto\footnote{Se puede acceder a las trazas de las pruebas, 
+código de los programas desarrollados, y cualquier recurso utilizado en este TFG bajo
+petición al autor.}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Datos en crudo} \label{sct:anexo_datosencrudo}
+
+\subsection*{Primeras 100 líneas de la traza resultante del generador}
+
+\begin{lstlisting}[style=consola]
+[
+	{
+		"eventType" : "S",
+		"id" : "rmi://10.0.1.1:1099/Broker1-M23",
+		"contextFunction" : {},
+		"constraints" : {
+			"class:str" : [{"=" : "broadcast"}]
+		}
+	},
+	{
+		"eventType" : "S",
+		"id" : "rmi://10.0.1.1:1099/Broker1-M24",
+		"contextFunction" : {},
+		"constraints" : {
+			"class:str" : [{"=" : "id7471312"}]
+		}
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "broadcast"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "broadcast"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "broadcast"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "broadcast"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "broadcast"
+	},
+	{
+		"eventType" : "S",
+		"id" : "rmi://10.0.1.1:1099/Broker1-M36",
+		"contextFunction" : {},
+		"constraints" : {
+			"class:str" : [{"=" : "__announce__"}]
+		}
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "__announce__"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "ProxyID_-3884500000",
+		"x:str" : "0.0",
+		"y:str" : "0.0"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "__announce__"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+		"eventType" : "P",
+		"class:str" : "id11296229"
+	},
+	{
+\end{lstlisting}
+
+\subsection*{Primeras 100 líneas de la traza resultante que conforma la \autoref{fig:subsworkload_th_fast_spike_25k-113k-100k}} \label{ssct:anexo_fast-spike}
+
+\begin{lstlisting}[style=consola]
+"timestamp","throughput"
+30.414,100401
+30.912,100401
+31.419,98619
+31.917,100401
+32.414,100603
+32.913,100200
+33.412,100200
+33.919,98619
+34.412,101419
+34.917,99009
+35.473,89928
+35.913,113636
+36.413,100000
+36.917,99206
+37.417,100000
+37.918,99800
+38.417,100200
+38.914,100603
+39.416,99601
+39.917,99800
+40.416,100200
+40.913,100603
+41.417,99206
+41.916,100200
+42.416,100000
+42.916,100000
+43.416,100000
+43.916,100000
+44.415,100200
+44.916,99800
+45.412,100806
+45.916,99206
+46.416,100000
+46.912,100806
+47.436,95419
+47.912,105042
+48.416,99206
+48.915,100200
+49.416,99800
+49.916,100000
+50.416,100000
+50.914,100401
+51.416,99601
+51.938,95785
+52.415,104821
+52.918,99403
+53.416,100401
+53.916,100000
+54.417,99800
+54.916,100200
+55.415,100200
+55.913,100401
+56.412,100200
+56.915,99403
+57.415,100000
+57.913,100401
+58.417,99206
+58.912,101010
+59.414,99601
+59.917,99403
+60.416,100200
+60.916,100000
+61.415,100200
+61.916,99800
+62.415,100200
+62.916,99800
+63.416,100000
+63.913,100603
+64.417,99206
+64.915,100401
+65.416,99800
+65.915,100200
+66.416,99800
+66.916,100000
+67.417,99800
+67.916,100200
+68.416,100000
+68.916,100000
+69.416,100000
+69.915,100200
+70.416,99800
+70.916,100000
+71.416,100000
+71.912,100806
+72.416,99206
+72.916,100000
+73.412,100806
+73.944,93984
+74.417,105708
+74.916,100200
+75.414,100401
+75.916,99601
+76.416,100000
+76.916,100000
+77.416,100000
+77.915,100200
+78.416,99800
+78.915,100200
+79.412,100603
+\end{lstlisting}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Datos adicionales} \label{sct:anexo_datosadicionales}
+
+\subsection*{Scripts en R}
+
+\begin{lstlisting}[language=R, caption={Programa en R que genera una carga de subscripciones incremental, como en la \autoref{fig:subs_workload-growing}}]
+library(ggplot2)
+library(dplyr)
+library(tikzDevice)
+
+# Function to export plot to LaTeX
+print_LaTeX_plot <- function(path, plot, width, height) {
+  tikz(filename = path, standAlone = TRUE, width = width, height = height)
+  print(plot)
+  dev.off()
+  tools::texi2pdf(path, quiet = TRUE)
+}
+
+export_plots = TRUE
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+OUTPUT_CSV_DIR = "path/for/csv"
+OUTPUT_PLOT_DIR = "/paht/for/plot/pdf"
+low_workload  = 50000 # Stable system
+high_workload = 75000 # System saturates
+
+
+amount_noise = 0
+
+total_duration = 60
+windows_per_second = 10
+total_windows = total_duration * windows_per_second
+
+chunk_size = total_windows / 10
+
+# First chunk (low steady)
+first_chunk <- data.frame(subscriptions = rep(low_workload, chunk_size))
+
+# Second chunk (increase)
+step = (high_workload - low_workload) / (chunk_size * 2)
+second_chunk <- data.frame(subscriptions = seq(low_workload, high_workload, step))
+
+# Last chunk (high steady)
+last_chunk <- data.frame(subscriptions = rep(high_workload, chunk_size * 7))
+
+# Combine all chunks
+workload <- rbind(first_chunk, second_chunk, last_chunk)
+
+# Add noise
+x <- workload$subscriptions
+corrupt <- rbinom(length(x), 1, 1)    # choose an average of 10% to corrupt at random
+corrupt <- as.logical(corrupt)
+noise <- rnorm(sum(corrupt), 0, amount_noise) # generate the noise to add
+x[corrupt] <- x[corrupt] + noise      # about 10% of x has been corrupted
+workload$subscriptions <- x
+
+plot <- ggplot(workload, aes(x = c(1:nrow(workload)))) +
+  geom_line(aes(y = subscriptions), size=1) +
+  xlab("Tiempo (segundos)") +
+  ylab("Subscripciones") +
+  theme(legend.position = "bottom",
+        legend.text = element_text(size = 18, face="bold"),
+        legend.title = element_text(size = 18, face="bold"),
+        axis.text.x = element_text(size = 18, face="bold"),
+        axis.text.y = element_text(size = 18, face="bold"),
+        axis.title.x = element_text(size = 18, face="bold"),
+        axis.title.y = element_text(size = 18, face="bold"))
+plot
+
+print_LaTeX_plot(OUTPUT_PLOT_DIR, plot = plot, width = 10, height = 5)
+
+# Export
+workload <- as.integer(workload$subscriptions)
+write.table(workload, OUTPUT_CSV_DIR, col.names = FALSE, row.names = FALSE, sep = ";")
+\end{lstlisting}
+
+\begin{lstlisting}[language=R, caption={Programa en R para obtener la carga representada en \autoref{fig:subs_workload-growing}}]
+library(ggplot2)
+library(tikzDevice)
+
+# Function to export plot to LaTeX
+print_LaTeX_plot <- function(path, plot, width, height) {
+  tikz(filename = path, standAlone = TRUE, width = width, height = height)
+  print(plot)
+  dev.off()
+  tools::texi2pdf(path, quiet = TRUE)
+}
+export_plots = TRUE
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+##### Datos del plot #####
+
+FILE_PATH = "../../logs/reports"
+FILE_NAME = "logs-subs-10reps.csv"
+XLABEL = "Subscripciones"
+YLABEL = "Throughput (notificaciones/s)"
+THEME <- theme(legend.position = "bottom",
+               legend.text  = element_text(size = 18, face="bold"),
+               legend.title = element_text(size = 18, face="bold"),
+               axis.text.x  = element_text(size = 18, face="bold"),
+               axis.text.y  = element_text(size = 18, face="bold"),
+               axis.title.x = element_text(size = 18, face="bold"),
+               axis.title.y = element_text(size = 18, face="bold"))
+
+##### Codigo generador del plot #####
+
+data <- read.csv(paste(FILE_PATH, FILE_NAME, sep="/"), header = TRUE, sep = ",")
+
+plot <- ggplot(data, aes(x = subscriptions)) +
+  geom_line(aes(y = throughput), size=1) +
+  xlab(XLABEL) +
+  ylab(YLABEL) +
+  scale_y_log10(breaks = c(1, 30000, 40000, 50000, 60000, 70000, 80000),
+                     labels = c("1", "30k", "40k", "50k", "60k", "70k", "80k")) +
+  scale_x_log10(breaks = c(1, 10,100, 1000, 100000),
+                labels = c("1", "10", "100", "1k", "100k")) +
+  
+
+print_LaTeX_plot("./throughput_logsubs.tex", plot = plot, width = 10, height = 5)
+\end{lstlisting}
+
+\begin{lstlisting}[language=R, caption={Programa en R que genera una carga de subscripciones con un pico puntual, como en la \autoref{fig:subsworkload_20k-100k}}]
+library(ggplot2)
+library(dplyr)
+library(tikzDevice)
+
+# Function to export plot to LaTeX
+print_LaTeX_plot <- function(path, plot, width, height) {
+  tikz(filename = path, standAlone = TRUE, width = width, height = height)
+  print(plot)
+  dev.off()
+  tools::texi2pdf(path, quiet = TRUE)
+}
+
+export_plots = TRUE
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+
+# SCRIPT PARAMETERS
+OUTPUT_CSV_DIR = "path/for/csv"
+OUTPUT_PLOT_DIR = "path/for/plot/pdf"
+low_workload  = 25000  # Stable system
+high_workload = 113904  # System saturates
+fast_inc = TRUE
+plain_spike = FALSE
+
+
+amount_noise = 0
+
+total_duration = 60
+windows_per_second = 10
+total_windows = total_duration * windows_per_second
+
+chunk_size = total_windows / 10
+
+# First chunk (low steady)
+first_chunk <- data.frame(subscriptions = rep(low_workload, chunk_size*3))
+
+# Second chunk (fast or slow increase)
+step_up = (high_workload - low_workload) / ((chunk_size)*(fast_inc) ? 10 : 1)
+second_chunk <- data.frame(subscriptions = seq(low_workload, high_workload, step_up))
+
+if (plain_spike) {
+  # Extra chunk (top steady)
+  extra_chunk <- data.frame(subscriptions = rep(high_workload, chunk_size*0.5))
+}
+
+# Third chunk (decrease)
+third_chunk <- data.frame(subscriptions = seq(high_workload, low_workload, -step_up))
+
+# Last chunk (low steady)
+last_chunk <- data.frame(subscriptions = rep(low_workload, chunk_size*3))
+
+# Combine all chunks
+if (plain_spike) {
+  workload <- rbind(first_chunk, second_chunk, third_chunk, last_chunk)
+}else {
+  workload <- rbind(first_chunk, second_chunk, extra_chunk, third_chunk, last_chunk)
+}
+
+# Add noise
+x <- workload$subscriptions
+corrupt <- rbinom(length(x), 1, 1)    # choose an average of 10% to corrupt at random
+corrupt <- as.logical(corrupt)
+noise <- rnorm(sum(corrupt), 0, amount_noise) # generate the noise to add
+x[corrupt] <- x[corrupt] + noise      # about 10% of x has been corrupted
+workload$subscriptions <- x
+
+plot <- ggplot(workload, aes(x = c(1:nrow(workload)))) +
+  geom_line(aes(y = subscriptions), size=1) +
+  xlab("Tiempo (segundos)") +
+  ylab("Subscripciones") +
+  theme(legend.position = "bottom",
+        legend.text = element_text(size = 18, face="bold"),
+        legend.title = element_text(size = 18, face="bold"),
+        axis.text.x = element_text(size = 18, face="bold"),
+        axis.text.y = element_text(size = 18, face="bold"),
+        axis.title.x = element_text(size = 18, face="bold"),
+        axis.title.y = element_text(size = 18, face="bold"))
+
+plot
+
+print_LaTeX_plot(OUTPUT_PLOT_DIR, plot = plot, width = 10, height = 5)
+
+# Export
+workload <- as.integer(workload$subscriptions)
+write.table(
+  workload,
+  OUTPUT_CSV_DIR,
+  col.names = FALSE,
+  row.names = FALSE,
+  sep = ";")
+\end{lstlisting}
+
+\begin{lstlisting}[language=R, caption={Programa en R para generar las gráficas del Throughput y del Tiempo de Respuesta.}]
+library(ggplot2)
+library(tikzDevice)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+
+# Function to export plot to LaTeX
+print_LaTeX_plot <- function(path, plot, width, height) {
+  tikz(filename = path, standAlone = TRUE, width = width, height = height)
+  print(plot)
+  dev.off()
+  tools::texi2pdf(path, quiet = TRUE)
+}
+export_plots = TRUE
+
+##### Vars. and flag #####
+
+# Paths of the dir with measurements and of each csv
+DIR_PATH = "path/to/dir/of/measurements"
+FILE_NAME_TH = "path/to/th.csv"
+FILE_NAME_RT = "path/to/rt.csv"
+
+# Specify plots
+PLOT_TH = TRUE
+PLOT_RT = TRUE
+
+# Number of points on the plot
+N_POINTS = 50
+
+THEME <- theme(legend.position = "bottom",
+               legend.text = element_text(size = 18, face="bold"),
+               legend.title = element_text(size = 18, face="bold"),
+               axis.text.x = element_text(size = 18, face="bold"),
+               axis.text.y = element_text(size = 18, face="bold"),
+               axis.title.x = element_text(size = 18, face="bold"),
+               axis.title.y = element_text(size = 18, face="bold"))
+
+##### THROUGHPUT #####
+
+if (PLOT_TH) {
+
+  # Name of plot labels and generated PDF
+  OUT_FILE_TH = paste("./th_",FILE_NAME_TH,".tex", sep="")
+  XLABEL_TH = "Tiempo (segundos)"
+  YLABEL_TH = "Throughput (notifs/s)"
+
+  data_th <- read.csv(paste(DIR_PATH, FILE_NAME_TH, sep="/"), header = TRUE, sep = ",")
+
+  # Delete first values if needed (system not entirely up, so times are very high)
+  data_th <- data_th[-c(0:3),]
+
+  # Spit data frame in N_POINTS equal-sized data frames and find mean
+  data_th$points <- cut(c(1:nrow(data_th)),
+                        breaks=(nrow(data_th)/N_POINTS)*(0:N_POINTS),
+                        labels=c(1:N_POINTS))
+
+  # Mean for each point
+  new_data_th <- aggregate(cbind(timestamp, throughput) ~ points,
+                        data = data_th, FUN = mean, na.rm = TRUE)
+
+  # To plot all points, replace 'new_data_th' with 'data_th'
+  plot_th <- ggplot(data_th, aes(x = timestamp)) +
+    geom_line(aes(y = throughput), size=1) +
+    xlab(XLABEL_TH) +
+    ylab(YLABEL_TH) +
+    scale_y_log10() +
+    THEME
+
+  print_LaTeX_plot(OUT_FILE_TH, plot = plot_th, width = 10, height = 5)
+}
+
+##### RESPONSE TIME #####
+
+if (PLOT_RT) {
+
+  # Name of plot labels and generated PDF
+  OUT_FILE_RT = paste("./rt_",FILE_NAME_RT,".tex", sep="")
+  XLABEL_RT = "ID Notificacion"
+  YLABEL_RT = "Tiempo de respuesta (segundos)"
+
+  data_rt <- read.csv(paste(DIR_PATH, FILE_NAME_RT, sep="/"), header = TRUE, sep = ",")
+
+  # Delete first values if needed (system not entirely up, so times are very high)
+  data_rt <- data_rt[-c(0:1),]
+
+  # Spit data frame in N_POINTS equal-sized data frames and find mean
+  data_rt$points <- cut(c(1:nrow(data_rt)),
+                        breaks=(nrow(data_rt)/N_POINTS)*(0:N_POINTS),
+                        labels=c(1:N_POINTS))
+
+  # Mean for each point
+  new_data_rt <- aggregate(cbind(id, resp_time) ~ points,
+                        data = data_rt,
+                        FUN = mean,
+                        na.rm = TRUE)
+
+  plot_rt <- ggplot(data_rt, aes(x = id)) +
+    geom_line(aes(y = resp_time), size=1) +
+    xlab(XLABEL_RT) +
+    ylab(YLABEL_RT) +
+    THEME
+
+  print_LaTeX_plot(OUT_FILE_RT, plot = plot_rt, width = 10, height = 5)
+}
+
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

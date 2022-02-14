@@ -1,0 +1,104 @@
+%%***********************************************
+%% Plantilla para TFG.
+%% Escuela Técnica Superior de Ingenieros Informáticos. UPM.
+%%***********************************************
+
+%%-----------------------------------------------
+%% Importar Preámbulo:
+\input{include/Preambulo}
+
+%%-----------------------------------------------
+%% Cargar datos relativos al TFG:
+%% (actualizar estos datos en secciones/_DatosTFG.tex)
+\input{secciones/_DatosTFG}
+
+%%-----------------------------------------------
+%% Documento
+\begin{document}
+\input{include/Portada}
+
+%%-----------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Resumen del trabajo realizado}
+
+Durante estos meses, se ha comenzado con la lectura de documentación, para poder comprender
+el funcionamiento de los sistemas que se han usado y poder llevar a cabo las tareas y cumplir
+con los objetivos establecidos.
+
+Lo siguiente que se ha hecho es buscar una carga de trabajo real que se adapte a los requisitos
+establecidos para poder ser utilizado en las tareas que se tienen planificadas. Esta carga
+se ha encontrado en el \textit{Middleware Systems Research Group},
+de la de la Universidad de Toronto. Esta carga, tras ser analizada, se ha confirmado su utilidad,
+y se ha usado para continuar con el desarrollo e implementar las pruebas siguientes del proyecto.
+
+Una vez encontrada la carga de trabajo a usar, se ha procedido con el diseño y la implementación del
+generador de cargas de trabajo, que utiliza esta carga para crear una análoga pero con el formato
+del sistema utilizado.
+
+Tras implementar este generador y obtener la carga compatible, se ha procedido a desarrollar diferentes
+pruebas, obteniendo de cada una de ellas las métricas de rendimiento, creando a su vez pequeños
+programas para poder visualizar estas métricas mediante gráficos.
+
+El trabajo actual consiste en la interpretación de los datos de rendimiento obtenidos, para poder
+implementar pruebas que usen la carga y que lleven al sistema a situaciones en las que queremos ver
+de forma específica su rendimiento.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Modificaciones del Plan de Trabajo}
+
+Ni los objetivos ni las tareas de este proyecto se han modificado, manteniendo el objetivo último del mismo.
+
+El Diagrama de Gantt tampoco ha sufrido modificaciones, a pesar de que han surgido problemas con el diseño
+e implementación de ciertas pruebas, lo que han ralentizado el avance del proyecto, pero no ha requerido
+de modificar el plan de trabajo.
+
+\section*{Objetivos}
+
+\begin{itemize}
+    \item[•] Comprender el funcionamiento de los sistemas de auto-escalado
+    \item[•] Encontrar una carga de trabajo real, compatible y exportable al sistema usado
+    \item[•] Desarrollar pruebas para que el sistema de auto-escalado utilice esta carga
+    \item[•] Interpretar las métricas de rendimiento resultantes de las pruebas
+    \item[•] Desarrollar nuevas cargas de trabajo basadas en la carga real
+    \item[•] Desarrollar más pruebas que utilicen estas nuevas cargas de trabajo
+    \item[•] Interpretar las nuevas métricas de rendimiento resultantes de las pruebas
+    \item[•] Implementar modelos predictivos en base a los resultados obtenidos
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Tareas}
+
+\begin{enumerate}
+    \item[T1 -] Lectura de documentación sobre sistemas de auto-escalado
+    \item[T2 -] Familiarización con el sistema de auto-escalado a usar
+    \item[T3 -] Buscar una carga de trabajo real y compatible
+    \item[T4 -] Comprobar la compatibilidad e integridad de la carga de trabajo
+    \item[T5 -] Desarrollar un generador que convierta la carga de trabajo a formato compatible con el sistema usado
+    \item[T6 -] Comprobar el correcto funcionamiento del generador desarrollado
+    \item[T7 -] Desarrollar pruebas en el sistema que utilicen la carga de trabajo
+    \item[T8 -] Desarrollar scripts que muestren e interpreten las medidas de rendimiento
+    \item[T9 -] Crear nuevas cargas de trabajo basadas en la real y apoyadas en los resultados obtenidos
+    \item[T10 -] Desarrollar nuevas pruebas en el sistema con las nuevas cargas de trabajo
+    \item[T11 -] Interpretar las nuevas medidas de rendimiento con los scripts ya creados
+    \item[T12 -] Documentar condiciones que llevan al sistema a situaciones destacables
+    \item[T13 -] Aplicar modelos predictivos a las medidas de rendimiento del sistema
+\end{enumerate}
+
+
+\begin{landscape}
+\input{include/GanttDiagram_revision}
+\end{landscape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Final del plan de trabajo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%-----------------------------------------------
+{}\end{document}

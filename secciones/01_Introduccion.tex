@@ -1,0 +1,227 @@
+\chapter{Introducción} \label{chp:intro}
+
+En este capítulo se presentan y explican la motivación, el contexto, los objetivos
+específicos del trabajo realizado y la estructura de este documento, con la 
+intención de proporcionar una visión general del mismo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Motivación del proyecto} \label{sct:intro_motivacion}
+
+% - Digitalización
+% - Paradigmas como el IoT, Smart Cities, ...
+% - Sistemas dirigidos por eventos que dan soporte a estos paradigmas
+% - Sistemas, como los pub/sub, se apoyan en el cloud computing para...
+% - Cloud computing ofrece la ventaja de la elasticidad (explicar)
+% - Elasticidad y al necesidad de la misma para nuestro tipo de sistema
+
+En los últimos años se ha producido un incremento significativo en la 
+digitalización de numerosos aspectos de la vida cotidiana de las personas como 
+consecuencia de la popularización de nuevos paradigmas tecnológicos como las 
+Smart Cities o el Internet of Things\footnote{Dispositivos físicos con sensores y 
+software que conectan e intercambian datos con otros dispositivos y sistemas a 
+través de Internet} (o IoT, por sus siglas).
+
+Estos paradigmas se basan en la infraestructura proporcionada por los sistemas 
+dirigidos por eventos, los cuales son de vital importancia para la transmisión
+de datos e información en tiempo real, como ocurre con el IoT, ya que 
+proporcionan una infraestructura y arquitectura mediante 
+Cloud Computing\footnote{Servicios de computación a través de Internet} 
+capaz de proveer de los recursos necesarios a sistemas distribuidos que mueven 
+grandes cantidades de datos (por ejemplo, sistemas publicador/subscriptor o 
+sistemas distribuidos de procesamiento de datos).
+
+La ventaja del Cloud Computing para los sistemas publicador/subscriptor 
+es la elasticidad que proporciona a dicho sistema, es decir, la capacidad de 
+adapta los recursos  dedicados a este en base a sus necesidades de cómputo. Esta 
+característica permite optimizar la utilización de los recursos de computación,
+ya los entornos de Cloud Computing usualmente, se basan en el pago bajo 
+demanda (\textit{pay-as-you-go}) de recursos dedicados.
+
+Para aprovechar esta elasticidad, los sistemas desplegados en una infraestructura 
+cloud, en concreto, los sistemas publicador/subscriptor, deben de implementar 
+dicha elasticidad, para poder adaptar los recursos disponibles a la cantidad 
+de trabajo entrante, al encontrarse en un entorno muy cambiante, donde
+puede haber  subidas y caídas repentinas de trabajo, llevando al sistema a una 
+desabastecimiento o sobre-abastecimiento de recursos, respectivamente.
+
+Esta elasticidad (o auto-escalado) se consigue mediante la implementación de un 
+auto-escalador (auto-scaler) en el sistema publicador/subscriptor, que 
+llevará a cabo las operaciones de escalado de forma automática y óptima, mediante
+la monitorización del uso de los recursos de computación, y para así saber cuánto ha 
+de escalar (en número de recursos añadidos/quitados).
+Existen diferentes paradigmas de auto-escalado, que llevan a cabo las operaciones 
+de escalado de diferentes formas.
+
+El sistema usado y sobre el que se ha estado trabajando en este proyecto es 
+E-SilboPS\cite{tfm:victor2017}\cite{thesis:tesisVictor}\cite{thesis:tesisSVavassori}, 
+un sistema publicador/subscriptor basado en contenido con cierto grado de 
+elasticidad\footnote{Sistema que adapta sus recursos a la cantidad 
+de trabajo entrante de forma automática.}. Este sistema es la continuación natural,
+mediante la implementación de la elasticidad y de numerosas mejoras, de 
+SilboPS\cite{thesis:tesisSVavassori}, un sistema publicador/subscriptor
+basado en contenido, e inspirado por SIENA\cite{paper:siena}.
+
+El principal problema con el desarrollo de este sistema es la dificultad de 
+probar su comportamiento en una situación real mediante el uso de una carga de 
+trabajo con datos reales, ya que la publicación de unos datos de este estilo 
+conllevan problemas de seguridad, tanto para la propia empresa como para
+los usuarios, ya que se expone la información sobre sus intereses, gustos, etc.
+
+Con una carga de trabajo real, se puede analizar el comportamiento del sistema 
+en un entorno real, con el objetivo de encontrar los puntos a mejorar, para 
+aumentar la precisión de las predicciones y el escalado, siendo este el objetivo
+de este trabajo y proyecto.
+
+El trabajo desarrollado en este TFG es la continuación natural de previos TFMs y tésis 
+doctorales\cite{tfm:victor2017}\cite{thesis:tesisVictor}\cite{thesis:tesisSVavassori}, 
+los cuales desarrollaron y mejoraron el sistema E-SilboPS, usado en este TFG.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Contexto del proyecto} \label{sct:intro_contexto}
+
+\subsection{Sistemas publicador/subscriptor auto-escalables} \label{ssct:intro_contexto_sistpubsub}
+
+Los sistemas publicador/subscriptor operan como mediadores entre las entidades 
+que actúan de publicadores, que generan información que puede ser de 
+interés para un usuario; y los propios usuarios, que especifican sus intereses
+mediante las subscripciones enviadas a este sistema, por lo que solo 
+reciben la información que encaja en dichos
+intereses)\cite{paper:themanyfacesofpubsub}\cite{paper:e-streamhub}.
+Este proceso se lleva a cabo comparando cada una de las subscripciones que el 
+sistema tiene almacenadas, y generando una lista de los usuarios a los que hay
+que enviar dicha publicación. 
+
+Existen dos tipos de paradigmas dentro de los sistemas publicador/subscriptor, 
+los basados en tema (\textbf{topic-based}), que permiten al usuario recibir 
+todas las publicaciones relacionadas con el tema especificado; y basados en 
+contenido (\textbf{content-based}), que proporcionan al usuario más medidas 
+para establecer qué quiere recibir por medio de especificar pares clave-valor 
+que se comprobarán contra el contenido de la publicación.
+
+Estos sistemas pueden ser auto-escalables, es decir, adaptan sus recursos y 
+dedicación de los mismos a la cantidad de trabajo que están recibiendo. 
+Este auto-escalado puede ser de dos tipos, \textbf{reactivo}, por el cual el 
+sistema escala\footnote{Aumento/Disminución de los recursos} cuando se detecta
+un elevado/bajo consumo de cierto  recurso computacional, o \textbf{predictivo}, 
+anticipando el aumento/disminución de recursos a la saturación/desuso de los 
+mismos, maximizando la eficiencia del sistema y minimizando el malgasto.
+
+\subsection{E-SilboPS} \label{ssct:intro_motivacion_esilbops}
+
+Para desarrollar este proyecto, se ha utilizado, con el fin de poder poner en 
+práctica las mejoras aplicables a los sistemas publicador/subscriptor, el 
+sistema E-SilboPS, que es la continuación del trabajo de previas 
+tesis doctorales \cite{thesis:tesisVictor}\cite{thesis:tesisSVavassori},
+llevadas a cabo en el grupo de investigación \textit{CETTICO} \cite{web:cettico},
+en la Escuela Técnica Superior de Ingenieros 
+Informáticos\footnote{\href{https://www.fi.upm.es/}{https://www.fi.upm.es/}} 
+de la Universidad Politécnica de 
+Madrid\footnote{\href{https://www.upm.es/}{https://www.upm.es/}}.
+
+El grupo de investigación \textit{CETTICO} desarrolla y 
+lleva proyectos en diferentes líneas de investigación, proporcionando 
+soluciones tecnológicas a diferentes problemas en sistemas distribuidos, 
+minería de datos y tecnologías web, entre otros muchos; tanto para empresas 
+y sus departamentos de I+D+i como para proyectos de investigación, como este.
+
+Este Trabajo de Fin de Grado se centra en la mejora de un sistema 
+distribuido publish/subscribe auto-escalable basado en contenido, mediante el
+análisis de sus principales métricas de rendimiento y la aplicación de modelos
+predictivos, con el objetivo último de mejorar la predicción de los recursos 
+que necesita, tanto en cantidad como en tipo, de forma que la eficiencia del 
+sistema sea la máxima en cada momento.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Objetivos} \label{sct:intro_objetivos}
+
+El principal objetivo de este trabajo es la mejora de un sistema de 
+auto-escalado desarrollado para sistemas distribuidos, en concreto, para 
+sistemas de publicador/subscriptor, mediante la implementación de modelos 
+predictivos aplicados a cargas de trabajo reales.
+
+De este objetivo general, se pueden extraer los siguientes más específicos, que
+reflejan de forma más concisa el desarrollo del proyecto:
+
+\begin{itemize}
+
+    \item[•] Realizar un análisis de la situación actual de los sistemas publicador/subscriptor 
+    auto-escalables, con el objetivo de conocer su funcionamiento y sus limitaciones, extrayendo 
+    los datos más relevantes, desarrollando una visión detallada y adquiriendo un conocimiento
+    general de estos sistemas.
+    
+    \item[•] Realizar un análisis de las cargas de trabajo actuales y en uso en los sistemas 
+    auto-escalables ya desarrollados, extrayendo la información más relevante sobre ellos para
+    determinar su posible uso en futuras pruebas.
+    
+    \item[•] Realizar un estudio de las cargas de trabajo actualmente en uso en sistemas 
+    distribuidos, y buscar una carga de trabajo real, que se haya obtenido por medio de un 
+    sistema real, y que sea compatible y exportable al sistema que se utilizará.
+    
+    \item[•] Realizar un análisis estático de la carga de trabajo escogida, extrayendo los datos más 
+    relevantes, y comprobando su estructura y completa compatibilidad con el sistema que se utilizará,
+    con el objetivo de traducir dicha carga a una carga compatible con el input del sistema a 
+    utilizar, por medio de desarrollar un traductor que produzca una carga de trabajo basada en la 
+    escogida, y sea compatible con la entrada del sistema a utilizar.
+    
+    \item[•] Implementar pruebas que utilicen la carga de trabajo real escogida, con el objetivo de
+    obtener las medidas de rendimiento relevantes del sistema, para analizar su comportamiento y 
+    obtener conclusiones de su eficiencia.
+
+    \item[•] Crear nuevas cargas de trabajo reales, partiendo de los resultados de las pruebas y
+    de la carga de trabajo ya presente, de forma que dichas cargas lleven al sistema a diferentes 
+    situaciones cuyo estudio, y el sus medidas de rendimiento más relevantes, es de interés para el 
+    trabajo actual.
+
+    \item[•] Desarrollar e implementar modelos predictivos que se adapten a las diferentes
+    situaciones a las que el sistema se puede enfrentar en un entorno real, basando dichos modelos en
+    los resultados y pruebas llevadas a cabo previamente.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Estructura del Documento} \label{sct:intro_estructura}
+
+Esta memoria, que cubre el trabajo realizado en este TFG, se divide en los 
+diferentes apartados, los cuales cubren los objetivos establecidos en la 
+\textit{\autoref{sct:intro_objetivos} Objetivos}.
+
+Tras esta introducción, en el \textit{\autoref{chp:state-of-the-art} Trabajo relacionado y Estado 
+del Arte}, se presenta el trabajo externo que se ha llevado a cabo previamente 
+en este proyecto, así como la situación actual de los sistemas involucrados en el 
+desarrollo e implementación del mismo, los problemas actuales de estos sistemas, y
+diferenciando entre los distintos tipos de sistemas de auto-escalado.
+
+Una vez presentada la situación en la que se ha desarrollado este proyecto, en 
+el \textit{\autoref{chp:desarrollo} Desarrollo de un generador de cargas de trabajo para 
+sistemas publicador/subscriptor basados en contenido}, se exponen las 
+decisiones de diseño e implementación de dicho generador, los sistemas y 
+herramientas que se han usado, y análisis de los resultados obtenidos de aplicar 
+este generador a E-SilboPS, el sistema usado.
+
+Con el objetivo de mejorar las predicciones del sistema, se presenta, en el
+\textit{\autoref{chp:modelos} Generación de  modelos predictivos para el auto-escalado
+de E-SilboPS}, el diseño  y la implementación de los modelos predictivos para
+E-SilboPS, exponiendo el objetivo de estos modelos, su base y los resultados 
+esperados de la aplicación de estos modelos.
+
+A continuación, en el \textit{\autoref{chp:impacto} Impacto del trabajo}, se relacionan
+las consecuencias y el impacto general de este proyecto, así como su relación 
+con los Objetivos de Desarrollo Sostenible, y en cuáles se enmarca el mismo.
+
+Por último, se presentan, en el \textit{\autoref{chp:resultados} Resultados y conclusiones},
+la información obtenida gracias a este proyecto y los resultados que ha generado. 
+De igual manera, se explican las conclusiones personales del autor, así como el
+trabajo futuro del proyecto, enfocado a futuras mejoras del auto-escalado, la
+aplicación de los modelos predictivos, y mejoras en el sistema.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
