@@ -1,4 +1,4 @@
-# TFG - Mejora de un Sistema de Auto-escalado para Sistemas Distribuidos
+# Mejora de un Sistema de Auto-escalado para Sistemas Distribuidos
 ## Resumen
 Uno de los principales pilares de la computación en la nube es la elasticidad, es decir, la capacidad de ajustar los recursos necesarios de forma automática para cubrir la demanda en cada instante. Los sistemas de auto-escalado son los encargados de dotar de elasticidad a los sistemas escalables. Dichos sistemas de auto-escalado están recibiendo gran atención en los últimos años debido a la expansión de las arquitecturas basadas en micro-servicios (e.g. Kubernetes y Docker) y al auge de la computación en la nube.
 
@@ -14,6 +14,7 @@ Los resultados obtenidos en este Trabajo de Fin de Grado muestran el correcto fu
 
 **Palabras Clave:** Auto-escalado, Sistemas Distribuidos, Cloud, Modelos Estadísticos.
 
+# Improving an Auto-scalling System for Distributed Systems
 ## Abstract
 One of the main pillars of cloud computing is elasticity, i.e. the ability to automatically adjust the resources needed to meet the demand at any given time. Auto-scaling systems are responsible of providing elasticity to scalable systems. This auto-scaling systems are getting increasing attention in recent years thanks to the growth of micro-services based architectures, e.g. Kubernetes and Docker, and the rise on popularity of cloud computing.
 
